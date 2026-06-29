@@ -1,0 +1,172 @@
+Microsoft Windows [Version 10.0.26200.8655]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\kadak>cd C:\Users\kadak\DE projects
+
+C:\Users\kadak\DE projects>python -version
+Unknown option: -e
+usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+
+C:\Users\kadak\DE projects>python --version
+Python 3.13.14
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+Loading data...
+Traceback (most recent call last):
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 46, in <module>
+    load_csv(conn, "material_master",   os.path.join(RAW_DIR, "material_master.csv"))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 25, in load_csv
+    with open(filepath, newline="") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\kadak\\DE projects\\..\\data\\raw\\material_master.csv'
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 25
+    with open(filepath= "C:\Users\kadak\DE projects\raw", newline="") as f:
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 25
+    with open(filepath= "C:\Users\kadak\DE projects\raw\", newline="") as f:
+                                                                    ^
+SyntaxError: unterminated string literal (detected at line 25)
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 18
+    RAW_DIR     = os.path.join(os.path.dirname(C:\Users\kadak\DE projects\), "..", "data", "raw")
+                                                ^
+SyntaxError: invalid syntax
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 18
+    RAW_DIR     = os.path.join(os.path.dirname(r"C:\Users\kadak\DE projects\"), "..", "data", "raw")
+                                                                                                  ^
+SyntaxError: unterminated string literal (detected at line 18)
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 18
+    RAW_DIR     = os.path.join(os.path.dirname(r"C:\Users\kadak\DE projects\"), "..", "data", "raw")
+                                                                                                  ^
+SyntaxError: unterminated string literal (detected at line 18)
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+Traceback (most recent call last):
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 20, in <module>
+    os.makedirs(CURATED_DIR, exist_ok=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 218, in makedirs
+  File "<frozen os>", line 228, in makedirs
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\kadak\\..\\data'
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+Traceback (most recent call last):
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 20, in <module>
+    os.makedirs(CURATED_DIR, exist_ok=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 218, in makedirs
+  File "<frozen os>", line 228, in makedirs
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\kadak\\..\\data'
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 19
+    CURATED_DIR = os.path.join(os.path.dirname(w"C:\Users\kadak\DE projects"), "..", "data", "curated")
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 19
+    CURATED_DIR = os.path.join(os.path.dirname(r"C:\Users\kadak\DE projects\"), "..", "data", "curated")
+                                                                                                      ^
+SyntaxError: unterminated string literal (detected at line 19)
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+Loading data...
+Traceback (most recent call last):
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 46, in <module>
+    load_csv(conn, "material_master",   os.path.join(RAW_DIR, "material_master.csv"))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kadak\DE projects\project1_bom_explosion.py", line 25, in load_csv
+    with open(filepath, newline="") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\kadak\\DE projects\\..\\data\\raw\\material_master.csv'
+
+C:\Users\kadak\DE projects>python project1_bom_explosion.py
+Loading data...
+  Loaded material_master: 200 rows
+  Loaded bom_header: 70 rows
+  Loaded bom_item: 441 rows
+
+=== QUERY 1: Multi-Level BOM Explosion ===
+Total BOM explosion rows: 166
+
+Sample (first 10 rows):
+  root_material         |  bom_level             |  parent_material       |  component_material    |  lifecycle_status      |  extended_qty   |  uom                   |  extended_cost_usd     |  is_phantom
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  MAT00006              |  1                     |  MAT00006              |  MAT00023              |  ACTIVE                |  13.163   |  SET                   |  16769.53              |  Y
+  MAT00006              |  1                     |  MAT00006              |  MAT00060              |  BLOCKED               |  18.443   |  M                     |  49484.23              |  N
+  MAT00006              |  1                     |  MAT00006              |  MAT00063              |  ACTIVE                |  11.512   |  BOX                   |  15883.91              |  N
+  MAT00006              |  1                     |  MAT00006              |  MAT00088              |  BLOCKED               |  1.246   |  KG                    |  1480.97               |  N
+  MAT00006              |  1                     |  MAT00006              |  MAT00097              |  DISCONTINUED          |  41.75   |  M                     |  208178.44             |  Y
+  MAT00006              |  1                     |  MAT00006              |  MAT00133              |  ACTIVE                |  30.938   |  KG                    |  1038.28               |  N
+  MAT00034              |  1                     |  MAT00034              |  MAT00033              |  DISCONTINUED          |  24.296   |  SET                   |  75484.51              |  N
+  MAT00034              |  1                     |  MAT00034              |  MAT00043              |  ACTIVE                |  6.523   |  KG                    |  15327.94              |  N
+  MAT00034              |  1                     |  MAT00034              |  MAT00058              |  ACTIVE                |  5.211   |  SET                   |  16841.33              |  N
+  MAT00034              |  1                     |  MAT00034              |  MAT00061              |  ACTIVE                |  0.744   |  PC                    |  3382.95               |  N
+
+=== QUERY 2: Cost Rollup per Finished Good ===
+Finished goods with BOM: 23
+
+Top 10 by BOM cost:
+  root_material    components    depth    total_cost_usd    obsolete    blocked
+  --------------------------------------------------------------------------------
+  MAT00146         15            1        1173662.68        0           2
+  MAT00034         12            1        763965.59         2           1
+  MAT00094         9             1        714479.93         1           1
+  MAT00119         7             1        696016.92         0           0
+  MAT00175         10            1        690419.6          1           1
+  MAT00166         10            1        649389.31         1           1
+  MAT00177         9             1        622135.06         1           0
+  MAT00130         6             1        597600.28         0           0
+  MAT00076         8             1        567204.33         0           0
+  MAT00059         9             1        520818.3          0           0
+
+=== QUERY 3: Impact Analysis - Obsolete Components in Active BOMs ===
+Problematic components: 21
+
+Top 5 highest-impact obsolete components:
+  MAT00088  status=BLOCKED  affects 5 finished goods
+    Finished goods: MAT00006,MAT00069,MAT00142,MAT00146,MAT00175
+  MAT00080  status=DISCONTINUED  affects 4 finished goods
+    Finished goods: MAT00119,MAT00130,MAT00146,MAT00177
+  MAT00095  status=DISCONTINUED  affects 4 finished goods
+    Finished goods: MAT00034,MAT00059,MAT00142,MAT00146
+  MAT00097  status=DISCONTINUED  affects 4 finished goods
+    Finished goods: MAT00006,MAT00034,MAT00076,MAT00175
+  MAT00118  status=DISCONTINUED  affects 4 finished goods
+    Finished goods: MAT00069,MAT00083,MAT00130,MAT00136
+
+Project 1 complete. Output: data/curated/bom_explosion.csv
+
+KEY LEARNINGS:
+1. Recursive CTE = the only way to handle multi-level hierarchies in SQL.
+   The ANCHOR defines the starting rows; RECURSIVE adds the next level
+   each pass until no new rows are found (or bom_level >= limit).
+
+2. Effective-dated joins: DATE('now') BETWEEN valid_from AND valid_to
+   ensures you only use BOMs valid TODAY, not expired or future ones.
+   Without this, you'd unknowingly pull outdated product structures.
+
+3. Cost rollup: extended_qty * unit_cost rolls up FROM leaf to root.
+   At each level you multiply the parent quantity by the child quantity.
+   This is why 'extended_qty' carries the cumulative factor, not just
+   the direct component quantity.
+
+4. Impact analysis: always flip the direction. Instead of "what's IN
+   the BOM of X", ask "which BOMs CONTAIN this problem component?"
+   This is what operations actually needs during an EOL/shortage event.
+
+
+C:\Users\kadak\DE projects>

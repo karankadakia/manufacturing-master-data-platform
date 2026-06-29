@@ -1,0 +1,10 @@
+rule_id,entity_id,severity,detail
+PIPE-MAT-001,MAT00057,CRITICAL,Invalid UOM 'INVALID' - rejected from analytics layer
+PIPE-MAT-001,MAT00075,CRITICAL,Invalid UOM 'INVALID' - rejected from analytics layer
+PIPE-MAT-001,MAT00089,CRITICAL,Invalid UOM 'INVALID' - rejected from analytics layer
+PIPE-MAT-001,MAT00090,CRITICAL,Invalid UOM 'INVALID' - rejected from analytics layer
+PIPE-MAT-001,MAT00118,CRITICAL,Invalid UOM 'INVALID' - rejected from analytics layer
+PIPE-MAT-001,MAT00125,CRITICAL,Invalid UOM 'INVALID' - rejected from analytics layer
+PIPE-MAT-001,MAT00197,CRITICAL,Invalid UOM 'INVALID' - rejected from analytics layer
+PIPE-MAT-002,MAT00114,HIGH,Completeness score 66.7% below 70% threshold
+PIPE-MAT-002,MAT00122,HIGH,Completeness score 66.7% below 70% threshold

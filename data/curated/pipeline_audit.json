@@ -1,0 +1,9 @@
+{
+  "raw_material_count": 200,
+  "curated_material_count": 200,
+  "curated_supplier_count": 100,
+  "supplier_duplicates_flagged": 0,
+  "pipeline_exceptions": 9,
+  "inventory_mart_rows": 160,
+  "pipeline_run_ts": "2026-06-25 18:35:41"
+}

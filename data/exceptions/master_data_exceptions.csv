@@ -1,0 +1,185 @@
+rule_id,rule_name,severity,domain,entity_id,detail,business_impact
+MAT-001,Missing material description,HIGH,Material,MAT00011,Description is blank or null,Buyers cannot identify the material; procurement errors likely.
+MAT-001,Missing material description,HIGH,Material,MAT00019,Description is blank or null,Buyers cannot identify the material; procurement errors likely.
+MAT-001,Missing material description,HIGH,Material,MAT00046,Description is blank or null,Buyers cannot identify the material; procurement errors likely.
+MAT-001,Missing material description,HIGH,Material,MAT00049,Description is blank or null,Buyers cannot identify the material; procurement errors likely.
+MAT-001,Missing material description,HIGH,Material,MAT00088,Description is blank or null,Buyers cannot identify the material; procurement errors likely.
+MAT-001,Missing material description,HIGH,Material,MAT00122,Description is blank or null,Buyers cannot identify the material; procurement errors likely.
+MAT-001,Missing material description,HIGH,Material,MAT00170,Description is blank or null,Buyers cannot identify the material; procurement errors likely.
+MAT-001,Missing material description,HIGH,Material,MAT00177,Description is blank or null,Buyers cannot identify the material; procurement errors likely.
+MAT-002,Invalid unit of measure,CRITICAL,Material,MAT00057,UOM value: INVALID,"Incorrect UOM breaks purchase orders, goods receipts, and inventory valuations."
+MAT-002,Invalid unit of measure,CRITICAL,Material,MAT00075,UOM value: INVALID,"Incorrect UOM breaks purchase orders, goods receipts, and inventory valuations."
+MAT-002,Invalid unit of measure,CRITICAL,Material,MAT00089,UOM value: INVALID,"Incorrect UOM breaks purchase orders, goods receipts, and inventory valuations."
+MAT-002,Invalid unit of measure,CRITICAL,Material,MAT00090,UOM value: INVALID,"Incorrect UOM breaks purchase orders, goods receipts, and inventory valuations."
+MAT-002,Invalid unit of measure,CRITICAL,Material,MAT00118,UOM value: INVALID,"Incorrect UOM breaks purchase orders, goods receipts, and inventory valuations."
+MAT-002,Invalid unit of measure,CRITICAL,Material,MAT00125,UOM value: INVALID,"Incorrect UOM breaks purchase orders, goods receipts, and inventory valuations."
+MAT-002,Invalid unit of measure,CRITICAL,Material,MAT00197,UOM value: INVALID,"Incorrect UOM breaks purchase orders, goods receipts, and inventory valuations."
+MAT-003,Active material missing MRP controller,HIGH,Material,MAT00069,"Lifecycle: ACTIVE, MRP controller: NULL",MRP runs with no planner assigned; shortage goes unnoticed.
+MAT-003,Active material missing MRP controller,HIGH,Material,MAT00114,"Lifecycle: ACTIVE, MRP controller: NULL",MRP runs with no planner assigned; shortage goes unnoticed.
+MAT-003,Active material missing MRP controller,HIGH,Material,MAT00135,"Lifecycle: ACTIVE, MRP controller: NULL",MRP runs with no planner assigned; shortage goes unnoticed.
+MAT-003,Active material missing MRP controller,HIGH,Material,MAT00167,"Lifecycle: ACTIVE, MRP controller: NULL",MRP runs with no planner assigned; shortage goes unnoticed.
+MAT-003,Active material missing MRP controller,HIGH,Material,MAT00187,"Lifecycle: ACTIVE, MRP controller: NULL",MRP runs with no planner assigned; shortage goes unnoticed.
+MAT-003,Active material missing MRP controller,HIGH,Material,MAT00199,"Lifecycle: ACTIVE, MRP controller: NULL",MRP runs with no planner assigned; shortage goes unnoticed.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00032,Procurement type: F,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00041,Procurement type: X,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00043,Procurement type: E,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00087,Procurement type: F,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00105,Procurement type: F,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00114,Procurement type: E,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00122,Procurement type: E,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00128,Procurement type: E,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00137,Procurement type: X,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00148,Procurement type: X,MRP cannot schedule procurement; stockouts likely.
+MAT-004,Active material missing lead time,HIGH,Material,MAT00186,Procurement type: E,MRP cannot schedule procurement; stockouts likely.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00035,Material type: HALB,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00042,Material type: HALB,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00043,Material type: HALB,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00049,Material type: HALB,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00057,Material type: FERT,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00058,Material type: HALB,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00119,Material type: FERT,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00137,Material type: HIBE,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00147,Material type: HIBE,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00168,Material type: HIBE,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-005,Active material with no plant view,CRITICAL,Material,MAT00178,Material type: HALB,Material cannot be used in any plant; invisible to MRP and procurement.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00007,Reorder point: 96,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00022,Reorder point: 51,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00031,Reorder point: 51,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00032,Reorder point: 41,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00041,Reorder point: 51,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00043,Reorder point: 76,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00087,Reorder point: 18,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00105,Reorder point: 83,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00114,Reorder point: 12,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00116,Reorder point: 42,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00122,Reorder point: 7,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00128,Reorder point: 92,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00137,Reorder point: 49,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00148,Reorder point: 21,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+MAT-006,Reorder point set without lead time,MEDIUM,Material,MAT00186,Reorder point: 98,Reorder trigger fires but replenishment time is unknown; wrong order timing.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00018,"BOM: BOM1001, Parent: MAT00189, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00065,"BOM: BOM1001, Parent: MAT00189, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00198,"BOM: BOM1001, Parent: MAT00189, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00065,"BOM: BOM1002, Parent: MAT00059, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00095,"BOM: BOM1002, Parent: MAT00059, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00112,"BOM: BOM1002, Parent: MAT00059, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00149,"BOM: BOM1003, Parent: MAT00059, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00182,"BOM: BOM1003, Parent: MAT00059, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00198,"BOM: BOM1003, Parent: MAT00059, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00179,"BOM: BOM1004, Parent: MAT00098, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00009,"BOM: BOM1005, Parent: MAT00098, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00089,"BOM: BOM1005, Parent: MAT00098, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00033,"BOM: BOM1007, Parent: MAT00142, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00088,"BOM: BOM1007, Parent: MAT00142, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00095,"BOM: BOM1007, Parent: MAT00142, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00080,"BOM: BOM1009, Parent: MAT00130, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00118,"BOM: BOM1009, Parent: MAT00130, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00082,"BOM: BOM1010, Parent: MAT00083, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00118,"BOM: BOM1010, Parent: MAT00083, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00179,"BOM: BOM1011, Parent: MAT00083, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00097,"BOM: BOM1013, Parent: MAT00076, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00060,"BOM: BOM1014, Parent: MAT00047, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00060,"BOM: BOM1015, Parent: MAT00047, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00065,"BOM: BOM1015, Parent: MAT00047, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00088,"BOM: BOM1015, Parent: MAT00047, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00115,"BOM: BOM1015, Parent: MAT00047, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00082,"BOM: BOM1016, Parent: MAT00181, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00060,"BOM: BOM1021, Parent: MAT00077, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00124,"BOM: BOM1021, Parent: MAT00077, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00005,"BOM: BOM1022, Parent: MAT00135, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00018,"BOM: BOM1022, Parent: MAT00135, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00089,"BOM: BOM1022, Parent: MAT00135, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00097,"BOM: BOM1024, Parent: MAT00069, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00088,"BOM: BOM1025, Parent: MAT00069, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00112,"BOM: BOM1025, Parent: MAT00069, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00116,"BOM: BOM1025, Parent: MAT00069, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00118,"BOM: BOM1025, Parent: MAT00069, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00060,"BOM: BOM1026, Parent: MAT00057, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00033,"BOM: BOM1028, Parent: MAT00034, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00082,"BOM: BOM1028, Parent: MAT00034, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00095,"BOM: BOM1028, Parent: MAT00034, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00097,"BOM: BOM1028, Parent: MAT00034, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00115,"BOM: BOM1028, Parent: MAT00034, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00068,"BOM: BOM1029, Parent: MAT00034, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00174,"BOM: BOM1030, Parent: MAT00157, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00088,"BOM: BOM1032, Parent: MAT00175, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00097,"BOM: BOM1032, Parent: MAT00175, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00115,"BOM: BOM1032, Parent: MAT00175, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00198,"BOM: BOM1032, Parent: MAT00175, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00005,"BOM: BOM1034, Parent: MAT00177, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00080,"BOM: BOM1034, Parent: MAT00177, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00009,"BOM: BOM1035, Parent: MAT00177, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00033,"BOM: BOM1035, Parent: MAT00177, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00112,"BOM: BOM1035, Parent: MAT00177, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00149,"BOM: BOM1035, Parent: MAT00177, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00198,"BOM: BOM1035, Parent: MAT00177, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00065,"BOM: BOM1036, Parent: MAT00113, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00033,"BOM: BOM1037, Parent: MAT00113, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00198,"BOM: BOM1037, Parent: MAT00113, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00009,"BOM: BOM1039, Parent: MAT00024, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00095,"BOM: BOM1042, Parent: MAT00006, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00198,"BOM: BOM1042, Parent: MAT00006, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00060,"BOM: BOM1043, Parent: MAT00006, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00088,"BOM: BOM1043, Parent: MAT00006, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00097,"BOM: BOM1043, Parent: MAT00006, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00065,"BOM: BOM1044, Parent: MAT00160, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00068,"BOM: BOM1044, Parent: MAT00160, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00082,"BOM: BOM1044, Parent: MAT00160, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00088,"BOM: BOM1044, Parent: MAT00160, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00044,"BOM: BOM1046, Parent: MAT00146, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00080,"BOM: BOM1046, Parent: MAT00146, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00095,"BOM: BOM1046, Parent: MAT00146, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00065,"BOM: BOM1047, Parent: MAT00146, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00088,"BOM: BOM1047, Parent: MAT00146, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00112,"BOM: BOM1047, Parent: MAT00146, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00044,"BOM: BOM1048, Parent: MAT00200, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00088,"BOM: BOM1048, Parent: MAT00200, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00097,"BOM: BOM1048, Parent: MAT00200, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00149,"BOM: BOM1049, Parent: MAT00200, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00089,"BOM: BOM1050, Parent: MAT00119, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00149,"BOM: BOM1050, Parent: MAT00119, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00080,"BOM: BOM1051, Parent: MAT00119, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00005,"BOM: BOM1052, Parent: MAT00195, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00009,"BOM: BOM1052, Parent: MAT00195, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00005,"BOM: BOM1053, Parent: MAT00195, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00089,"BOM: BOM1053, Parent: MAT00195, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00124,"BOM: BOM1053, Parent: MAT00195, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00044,"BOM: BOM1054, Parent: MAT00086, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00068,"BOM: BOM1054, Parent: MAT00086, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00089,"BOM: BOM1054, Parent: MAT00086, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00112,"BOM: BOM1054, Parent: MAT00086, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00009,"BOM: BOM1057, Parent: MAT00094, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00018,"BOM: BOM1057, Parent: MAT00094, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00115,"BOM: BOM1057, Parent: MAT00094, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00149,"BOM: BOM1061, Parent: MAT00140, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00198,"BOM: BOM1061, Parent: MAT00140, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00009,"BOM: BOM1062, Parent: MAT00136, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00089,"BOM: BOM1062, Parent: MAT00136, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00118,"BOM: BOM1063, Parent: MAT00136, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00124,"BOM: BOM1063, Parent: MAT00136, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00097,"BOM: BOM1064, Parent: MAT00121, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00179,"BOM: BOM1064, Parent: MAT00121, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00198,"BOM: BOM1064, Parent: MAT00121, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00009,"BOM: BOM1065, Parent: MAT00121, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00118,"BOM: BOM1065, Parent: MAT00121, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00009,"BOM: BOM1066, Parent: MAT00166, Component status: BLOCKED",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00149,"BOM: BOM1067, Parent: MAT00166, Component status: OBSOLETE",Production orders will reference unavailable parts; line stoppages likely.
+BOM-001,Active BOM using obsolete/blocked component,CRITICAL,BOM,MAT00179,"BOM: BOM1067, Parent: MAT00166, Component status: DISCONTINUED",Production orders will reference unavailable parts; line stoppages likely.
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0003,Acme Corp 3,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0006,Acme Corp 6,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0011,Acme Corp 11,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0014,Acme Corp 14,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0025,Acme Corp 25,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0026,Acme Corp 26,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0030,Acme Corp 30,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0037,Acme Corp 37,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0042,Acme Corp 42,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0061,Acme Corp 61,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0065,Acme Corp 65,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0071,Global Supplies 1,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0075,Global Supplies 5,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0087,Global Supplies 17,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-001,Active supplier missing payment terms,HIGH,Supplier,SUP0097,Global Supplies 27,"AP cannot process invoices; payment delays, supplier relationship risk."
+SUP-002,Supplier missing tax ID,HIGH,Supplier,SUP0020,Acme Corporation 20,Tax reporting non-compliance; potential regulatory fines.
+SUP-003,Single-source high-risk supplier,HIGH,Supplier,SUP0072,Global Supplies 2 | Risk: HIGH | Country: DE,Single point of failure in supply chain; any disruption halts production.
+SUP-003,Single-source high-risk supplier,HIGH,Supplier,SUP0095,Global Supplies 25 | Risk: HIGH | Country: MX,Single point of failure in supply chain; any disruption halts production.

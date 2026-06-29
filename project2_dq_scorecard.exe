@@ -1,0 +1,135 @@
+Microsoft Windows [Version 10.0.26200.8655]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\kadak>cd python sql/project2_dq_scorecard.py
+The system cannot find the path specified.
+
+C:\Users\kadak>cd C:\Users\kadak\DE projects
+
+C:\Users\kadak\DE projects>python sql/project2_dq_scorecard.py
+python: can't open file 'C:\\Users\\kadak\\DE projects\\sql\\project2_dq_scorecard.py': [Errno 2] No such file or directory
+
+C:\Users\kadak\DE projects>python project2_dq_scorecard.py
+Loading data...
+Traceback (most recent call last):
+  File "C:\Users\kadak\DE projects\project2_dq_scorecard.py", line 57, in <module>
+    load_csv(conn, table, os.path.join(RAW_DIR, fname))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kadak\DE projects\project2_dq_scorecard.py", line 27, in load_csv
+    with open(filepath, newline="") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\kadak\\DE projects\\..\\data\\raw\\material_master.csv'
+
+C:\Users\kadak\DE projects>python project2_dq_scorecard.py
+Loading data...
+  Loaded material_master
+  Loaded plant_material_view
+  Loaded bom_header
+  Loaded bom_item
+  Loaded supplier_master
+  Loaded purchase_order_header
+  Loaded purchase_order_line
+  Loaded inventory_balance
+
+=== Running Data Quality Rules ===
+
+  [HIGH    ] MAT-001: Missing material description
+            Violations: 8
+            Impact: Buyers cannot identify the material; procurement errors likely.
+
+  [CRITICAL] MAT-002: Invalid unit of measure
+            Violations: 7
+            Impact: Incorrect UOM breaks purchase orders, goods receipts, and inventory valuations.
+
+  [HIGH    ] MAT-003: Active material missing MRP controller
+            Violations: 6
+            Impact: MRP runs with no planner assigned; shortage goes unnoticed.
+
+  [HIGH    ] MAT-004: Active material missing lead time
+            Violations: 11
+            Impact: MRP cannot schedule procurement; stockouts likely.
+
+  [CRITICAL] MAT-005: Active material with no plant view
+            Violations: 11
+            Impact: Material cannot be used in any plant; invisible to MRP and procurement.
+
+  [MEDIUM  ] MAT-006: Reorder point set without lead time
+            Violations: 15
+            Impact: Reorder trigger fires but replenishment time is unknown; wrong order timing.
+
+  [CRITICAL] BOM-001: Active BOM using obsolete/blocked component
+            Violations: 108
+            Impact: Production orders will reference unavailable parts; line stoppages likely.
+
+  [CRITICAL] BOM-002: BOM component references non-existent material
+            Violations: 0
+
+  [HIGH    ] SUP-001: Active supplier missing payment terms
+            Violations: 15
+            Impact: AP cannot process invoices; payment delays, supplier relationship risk.
+
+  [HIGH    ] SUP-002: Supplier missing tax ID
+            Violations: 1
+            Impact: Tax reporting non-compliance; potential regulatory fines.
+
+  [HIGH    ] SUP-003: Single-source supplier with high risk category
+            Violations: 2
+            Impact: Single point of failure in supply chain; any disruption halts production.
+
+  [HIGH    ] INV-001: High-value inventory with no movement > 365 days
+            Violations: 0
+
+  [CRITICAL] INV-002: Inventory record for non-existent material
+            Violations: 0
+
+
+=================================================================
+MASTER DATA QUALITY SCORECARD
+=================================================================
+Domain            CRITICAL     HIGH   MEDIUM    TOTAL
+-------------------------------------------------------
+Material                18       25       15       58
+BOM                    108        0        0      108
+Supplier                 0       18        0       18
+Inventory                0        0        0        0
+-------------------------------------------------------
+TOTAL                  126       43       15      184
+
+Exception file: C:\Users\kadak\DE projects\data\..\data\exceptions\master_data_exceptions.csv
+
+=== BONUS: Supplier On-Time Delivery (worst performers) ===
+Supplier     Name                           OTD%  Lines  Not Del Risk
+--------------------------------------------------------------------------------
+SUP0097      Global Supplies 27              N/A      3        0 LOW
+SUP0074      Global Supplies 4              14.3      7        0 HIGH
+SUP0031      Acme Corp 31                   20.0      5        0 MEDIUM
+SUP0040      Acme Corporation 40            25.0      4        0 LOW
+SUP0068      Acme Corp 68                   25.0      4        0 LOW
+SUP0006      Acme Corp 6                    33.3      6        0 HIGH
+SUP0036      Acme Corp 36                   37.5      8        0 HIGH
+SUP0095      Global Supplies 25             37.5      8        0 HIGH
+SUP0007      Acme Corp 7                    40.0      5        0 MEDIUM
+SUP0027      Acme Corp 27                   40.0      5        0 HIGH
+
+KEY LEARNINGS:
+1. Data quality rules follow a pattern: SELECT entity_id + tags WHERE <condition fails>.
+   Every rule is a SELECT statement. The "good data" condition is just flipped to
+   catch violations. You can add hundreds of rules without changing the framework.
+
+2. Exception tables have a specific grain: one row per entity per rule violation.
+   This lets you filter by rule, domain, severity, or plant independently.
+   Don't collapse exceptions too early - the detail column needs to be diagnostic.
+
+3. Severity matters operationally:
+   - CRITICAL = system won't function (materials without plant views, invalid UOM)
+   - HIGH = wrong outputs (MRP runs with bad data, AP can't pay)
+   - MEDIUM = risk accumulation (coverage gaps, missing enrichment)
+
+4. Window functions (RANK, ROW_NUMBER, LAG) are essential for:
+   - Ranking suppliers/materials by performance
+   - Detecting duplicates (partition by key, row_number > 1 = duplicate)
+   - Comparing current vs previous period values
+   These are the most-tested SQL patterns in data engineering interviews.
+
+
+C:\Users\kadak\DE projects>

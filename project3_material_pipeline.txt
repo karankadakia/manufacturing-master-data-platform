@@ -1,0 +1,82 @@
+Microsoft Windows [Version 10.0.26200.8655]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\kadak>cd C:\Users\kadak\DE projects
+
+C:\Users\kadak\DE projects>python project3_material_pipeline.py
+============================================================
+MATERIAL MASTER NORMALIZATION PIPELINE
+============================================================
+
+Step 1: Ingesting raw data...
+  Raw materials: 200
+  Raw plant views: 355
+  Raw inventory: 160
+  Raw suppliers: 100
+
+Step 2: Standardizing schemas...
+  Material master standardized: 200 rows
+  Supplier master standardized: 100 rows
+
+Step 3: Supplier deduplication...
+  Potential duplicate supplier records: 0
+  Written: exceptions/supplier_duplicates.csv (0 rows)
+
+Step 4: Building curated material layer...
+  Curated material rows: 200
+  Written: curated/material_master.parquet + .csv
+  Written: curated/supplier_master.parquet (100 de-duplicated rows)
+
+Step 5: Generating pipeline DQ exceptions...
+  Written: exceptions/pipeline_exceptions.csv (9 rows)
+
+Step 6: Building inventory aging analytics mart...
+  Written: curated/inventory_aging_mart.csv (160 rows)
+
+  Inventory Aging Summary:
+  Aging Bucket                         Records Total Value ($)
+  --------------------------------------------------------------
+  0-30 days                                156     562,172,706
+  91-180 days                                4      13,236,193
+
+  Audit log written: curated/pipeline_audit.json
+
+  {
+    "raw_material_count": 200,
+    "curated_material_count": 200,
+    "curated_supplier_count": 100,
+    "supplier_duplicates_flagged": 0,
+    "pipeline_exceptions": 9,
+    "inventory_mart_rows": 160,
+    "pipeline_run_ts": "2026-06-25 18:35:41"
+}
+
+KEY LEARNINGS:
+1. Raw -> Standardized -> Curated -> Analytics is a REQUIRED pattern in every
+   manufacturing data platform. Each zone has a specific contract:
+   - Raw: exact copy of source, no transformation
+   - Standardized: column names, types, codes normalized
+   - Curated: business entities enriched and joined
+   - Analytics: marts optimized for specific use cases (aging, scorecards)
+
+2. Completeness score is the simplest governance KPI you can build.
+   Count how many critical fields are populated / total critical fields * 100.
+   It's immediately meaningful to a data steward and requires zero statistics.
+
+3. Deduplication with window functions (rank within partition):
+   - Group by the match key (normalized name + country)
+   - Rank by created_date (oldest = rank 1 = golden record)
+   - All rank > 1 = duplicate candidates
+   This same pattern works in PySpark with Window.partitionBy().orderBy()
+
+4. Parquet is always the output format for curated data.
+   It is compressed (5-10x smaller than CSV), schema-typed, column-oriented
+   (fast for analytics), and readable by Spark, Athena, Redshift, and Snowflake.
+   Writing .to_parquet() here is the exact call in PySpark too.
+
+5. Audit logs prove your pipeline ran and show row counts at each stage.
+   This is what operations teams check when something looks wrong in a report.
+   Without it, you're debugging blind.
+
+
+C:\Users\kadak\DE projects>
